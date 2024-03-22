@@ -1,0 +1,23 @@
+/*
+* WLOO Development
+* 
+Purpose: upgrade mods
+* 
+AA_JSM39208_QAREPORT:JTJGAO:08-APR-2022:added check for sign on time
+* 
+UW_AA_PCMS_QA:CVOUTSIS:16-JUL-2018:multiple fixes and improvements to QA check process
+*/
+
+/* WLOO BEGIN */
+   
+/* AA_JSM39208: Permission list checks sign on times */
+  
+If (&UW_CHG_OBJ_TYPE.UW_OBJECTTYPE.Value = 53) 
+Then
+      
+&MANUAL_RESULT = ProcessSignOn(&UW_CHG_OBJECT, &UW_CHG_OBJ_TYPE, &UW_CHG_APPL);
+   
+End-If;
+   
+/* WLOO END */
+
